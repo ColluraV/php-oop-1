@@ -30,7 +30,7 @@ $rawFilmList = [
     ];
 
     $FilmList = array_map(function($el){
-        $film = new Film ($el['title'] );
+        $film = new Film ($el['title'],$el['year'],$el['lore'],$el['type'] );
         $film->titolo =$el['title'];
         $film->anno =$el['year'];
         $film->trama = $el['lore'];
@@ -47,7 +47,7 @@ $rawFilmList = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dischi</title>
 
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="">
 
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -60,10 +60,15 @@ $rawFilmList = [
 </head>
 
 <body>
+    <?php
+   
 
-
-
-    <script src="./main.js"></script>
+   foreach ($FilmList as $film) {
+    $printcard = $film->printHTMLCard();
+ 
+  }
+    ?>
+    <script src=""></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 

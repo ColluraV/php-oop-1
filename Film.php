@@ -7,9 +7,9 @@ class Film{
     public $anno;
     public $trama;
     public $genere;
-}
 
-function __construct( string $title, string $year, string $lore, string $type ){
+
+function __construct( string $title, int $year, string $lore, string $type ){
 
     $this->titolo = $title;
     $this->anno = $year;
@@ -18,7 +18,7 @@ function __construct( string $title, string $year, string $lore, string $type ){
 
 }
 
-public function getHTMLCard() {
+/* public function printHTMLCard() {
     return "
       <div>
         <h2>$this->titolo</h2>
@@ -29,4 +29,19 @@ public function getHTMLCard() {
           <li>Email: $this->genere</li>
         </ul>
     ";
-  }
+  }  <----non funzionante */
+  public function printHTMLCard() {
+    ?>
+        <div class="text-center py-3 col-5 mx-auto">
+          <h2><?php echo  $this->titolo ?></h2>
+          <p><?php echo  $this->anno  ?></p>
+          <ul>
+            <li class="list-group-item">Trama <?php echo  $this->trama ?></li>
+            <li class="list-group-item">Genere: <?php echo $this->genere?></li>
+          </ul>
+        </div>
+      <?php
+      }
+ 
+   
+}
