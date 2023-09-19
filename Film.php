@@ -9,12 +9,12 @@ class Film{
     public $genere;
 }
 
-function __construct( string $title, string $date, string $lore, string $type ){
+function __construct( string $title, string $year, string $lore, string $type ){
 
     $this->titolo = $title;
-    $this->titolo = $date;
-    $this -> titolo = $type;
-    $this->titolo = $lore;
+    $this->anno = $year;
+    $this ->genere = $type;
+    $this->trama = $lore;
 
 }
 
@@ -25,8 +25,8 @@ public function getHTMLCard() {
         <p> $this->anno </p>
 
         <ul>
-          <li>Email: $this->email</li>
-          <li>Data di nascita: {$this->getDateOfBirth()}</li>
+        <li>Data di nascita: $this->trama</li>
+          <li>Email: $this->genere</li>
         </ul>
     ";
   }
